@@ -1,0 +1,9 @@
+<a href="#!/auth/new">Create Employee</a>
+
+<div>
+    <input type="text" ng-model="query">
+</div>
+
+<div ng-repeat="person in employees | filter: query">
+    <a>{{  person.firstName  }} {{  person.lastName  }}</a>
+</div>

@@ -1,0 +1,21 @@
+.align-right {
+    float: right; 
+    list-style-type: none;
+}
+
+label.upload-group {
+   width: 100px;
+   height: 40px; 
+   text-align: center;
+}
+
+input#file {
+    width: 0.1px; 
+    height: 0.1px; 
+    position: absolute;
+    z-index: -1;
+}
+
+.dog-pic-li {
+    float: left;
+}
