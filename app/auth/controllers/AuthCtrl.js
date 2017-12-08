@@ -2,11 +2,18 @@ angular.module("AuthApp")
 .controller("AuthCtrl", function($scope, $location, AuthFactory, factory) {
     $scope.auth = {}
 
-    $scope.logMeIn = function (credentials) {
+    $scope.logMeInShelter = function (credentials) {
         AuthFactory.authenticate(credentials).then(function (didLogin) {
             $scope.login = {}
             $scope.register = {}
             $location.url('/shelter/shelterWelcome')
+        })
+    }
+    $scope.logMeInUser = function (credentials) {
+        AuthFactory.authenticate(credentials).then(function (didLogin) {
+            $scope.login = {}
+            $scope.register = {}
+            $location.url('/user/userWelcome')
         })
     }
     //Button click to register a new user and bring them to their user welcome page
@@ -15,7 +22,7 @@ angular.module("AuthApp")
         $scope.logMeIn(registerNewUser)
         //Add Post User to Database here
         factory.postUser(registerNewUser)
-        $location.url('/auth/list')
+        $location.url('/user/userWelcome')
         })
     }
     //Log out button, will bring them back to the general welcome page

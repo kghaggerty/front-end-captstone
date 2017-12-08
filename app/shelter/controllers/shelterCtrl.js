@@ -10,6 +10,8 @@ angular
         shelterFactory.postDog(woof).then( res => {
             console.log(res)
             let key = res.data.name
+            $scope.dog = {}
+            alert("You posted a dog!")
         })
     }
     //to get file name

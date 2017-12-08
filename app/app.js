@@ -42,8 +42,9 @@ angular.module("AuthApp").config(function ($routeProvider) {
             controller: 'AuthCtrl'
         })
         .when('/user/userWelcome', {
-            templateUrl: 'app/auth/partials/decideWhoToRegister.html',
-            controller: 'AuthCtrl'
+            templateUrl: 'app/user/partials/userWelcome.html',
+            controller: 'userCtrl',
+            resolve: { isAuth }
         })
         //Takes user to welcome/login page
         .otherwise('/auth/welcome')

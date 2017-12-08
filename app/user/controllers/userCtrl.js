@@ -1,12 +1,10 @@
 angular
 .module("AuthApp")
 .controller("userCtrl", function (userFactory, $scope) {
-    $scope.dogs = []
-
-    /**
-     * Use factory to get all employees from Firebase
-     */
+    $scope.dog = []
+    console.log($scope.dogs)
+   //Get dogs from database
     userFactory.list().then(data => {
-        $scope.dogs = data
+        $scope.dog = data
     })
 })
