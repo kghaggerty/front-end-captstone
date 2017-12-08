@@ -4,13 +4,13 @@
     <ul>
             <li>Dog's Name: <input type="dogName" ng-model="dog.name"  autofocus></li>
             <li>Dog's Age:<input type="dogAge" ng-model="dog.age"></li>
-            <li class="dog-pic-li">Picture of Dog:<input type="file" id="fileinput" class="upload-group" ng-model="dog.pictureURL"></li>
+            <li class="dog-pic-li">Picture of Dog:<input type="file" id="fileinput"></li>
             <button type="button" class="btn btn-primary" id="uploadButton" ng-click="uploadFile()">Upload File</button>
             <li>Dog Size:<input type="dogSize" ng-model="dog.size"></li>
             <li>Health Comments:<input type="dogHealth" ng-model="dog.health"></li>
             <li>Good with other Animals?:<input type="dogAge" ng-model="dog.animals"></li>
             <li>Good with children?:<input type="dogChildren" ng-model="dog.children"></li>
             <li>Additional Comments:<input type="dogAdditional" ng-model="dog.additional"></li>
-            <button ng-click="postDogToDatabase(dog)">Post Your Dog Now!</button>
+            <button ng-click="postDogToDatabase(dog); postURL()">Post Your Dog Now!</button>
     </ul>
 </div>

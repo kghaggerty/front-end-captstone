@@ -1,6 +1,6 @@
 angular
     .module("AuthApp")
-    .factory("shelterFactory", function ($http) {
+    .factory("shelterFactory", function ($http, $routeParams) {
         return Object.create(null, {
             "postDog": {
                 value: function(dog) {
@@ -10,6 +10,6 @@ angular
                         "data": dog
                     })
                 }
-            }
+            },
         })
     })
