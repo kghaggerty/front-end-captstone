@@ -3,6 +3,7 @@ angular.module("AuthApp")
     let currentUserData = null
 
     firebase.auth().onAuthStateChanged(function (user) {
+
         if (user) {
             currentUserData = user
             console.log("User is authenticated")
@@ -27,7 +28,8 @@ angular.module("AuthApp")
             }
         },
         getUser: {
-            value: () => firebase.auth().currentUser
+            value: () => currentUserData
+            
         },
         logout: {
             value: () => firebase.auth().signOut()

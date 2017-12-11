@@ -46,6 +46,11 @@ angular.module("AuthApp").config(function ($routeProvider) {
             controller: 'userCtrl',
             resolve: { isAuth }
         })
+        .when('/user/viewSavedDogs', {
+            templateUrl: 'app/user/partials/viewSavedDogs.html',
+            controller: 'userCtrl',
+            resolve: { isAuth }
+        })
         //Takes user to welcome/login page
         .otherwise('/auth/welcome')
 })

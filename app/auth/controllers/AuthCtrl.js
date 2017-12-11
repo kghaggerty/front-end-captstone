@@ -1,9 +1,12 @@
 angular.module("AuthApp")
-.controller("AuthCtrl", function($scope, $location, AuthFactory, factory) {
+.controller("AuthCtrl", function($scope, $location, AuthFactory, factory, userFactory) {
     $scope.auth = {}
-
+    
+    
     $scope.logMeInShelter = function (credentials) {
         AuthFactory.authenticate(credentials).then(function (didLogin) {
+            credentials.uid = didLogin.uid
+            factory.postShelter(credentials)      
             $scope.login = {}
             $scope.register = {}
             $location.url('/shelter/shelterWelcome')
@@ -11,17 +14,30 @@ angular.module("AuthApp")
     }
     $scope.logMeInUser = function (credentials) {
         AuthFactory.authenticate(credentials).then(function (didLogin) {
-            $scope.login = {}
-            $scope.register = {}
-            $location.url('/user/userWelcome')
+            userFactory.listUsers().then(data => { 
+                let theUser = data.filter(function (user) {
+                    return credentials.email === user.email
+                })[0]
+
+                credentials.uid = didLogin.uid
+
+                if (theUser == undefined || theUser == null) {
+                    factory.postUser(credentials)
+                }
+
+                $scope.login = {}
+                $scope.register = {}
+                $location.url('/user/userWelcome')
+            })
         })
     }
     //Button click to register a new user and bring them to their user welcome page
     $scope.registerUser = function(registerNewUser) {
+        registerNewUser.interestedDogs = []
+        registerNewUser.notInterestedDogs = []
       AuthFactory.registerWithEmail(registerNewUser).then(function (didRegister) {
-        $scope.logMeIn(registerNewUser)
+        $scope.logMeInUser(registerNewUser)
         //Add Post User to Database here
-        factory.postUser(registerNewUser)
         $location.url('/user/userWelcome')
         })
     }
@@ -41,9 +57,8 @@ angular.module("AuthApp")
     //Button to register new shelter and take them to their shelter welcome page
     $scope.registerShelter = function(registerNewShelterAccount) {
         AuthFactory.registerWithEmail(registerNewShelterAccount).then(function (didRegister) {
-          $scope.logMeIn(registerNewShelterAccount)
+          $scope.logMeInShelter(registerNewShelterAccount)
           //Add Post User to Database here
-          factory.postShelter(registerNewShelterAccount)
           $location.url('/shelter/shelterWelcome')
         })
     }

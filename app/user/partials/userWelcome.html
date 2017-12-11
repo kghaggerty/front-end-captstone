@@ -1,5 +1,10 @@
 <h2>Welcome, user!</h2>
-
+<div>
+    <button ng-click="viewSavedDogs()" id="savedDogsButton">View Saved Dogs</button>
+</div>
 <div ng-repeat="dogs in dog">
-    <div> {{ dogs.name }} {{ dogs.age }} {{ dogs.picture }}</div>
+    <div>
+        <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150"><br> {{ dogs.name }}<br> {{ dogs.age }}<br>
+    </div>
+    <button ng-click="InterestedButton($event)" id="{{ dogs.id }}" >Interested</button><button id="{{ dogs.id }}" ng-click="notInterestedButton($event)">Not Interested</button>
 </div>

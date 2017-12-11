@@ -1,0 +1,9 @@
+<div>Saved dogs here</div>
+
+<div> 
+    <div ng-repeat="viewDogs in savedDog">
+        <div>
+            <img src="{{ viewDogs.url }}" alt="Dog Picture" width="150" height="150"><br> {{ viewDogs.name }}<br> {{ viewDogs.age }}<br>
+        </div>
+    </div>
+</div>

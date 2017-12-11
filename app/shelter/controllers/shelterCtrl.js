@@ -1,15 +1,14 @@
 angular 
 .module("AuthApp")
-.controller("shelterCtrl", function ($scope, factory, shelterFactory, $timeout, $routeParams){
+.controller("shelterCtrl", function ($scope, factory, shelterFactory, $timeout, AuthFactory){
     let selectedFile; 
     let pictureURL;
-    let key; 
+    let currentId = AuthFactory.getUser().uid
+
     $scope.dog = {}
     //Posts dog input to firebase
     $scope.postDogToDatabase = function(woof){
         shelterFactory.postDog(woof).then( res => {
-            console.log(res)
-            let key = res.data.name
             $scope.dog = {}
             alert("You posted a dog!")
         })
@@ -25,11 +24,10 @@ angular
     //function to upload image and store it to firebase storage.  also adding the picture url to firebase database
     $scope.uploadFile = function () {
     firebase.storage().ref().child('dogImages/' + selectedFile.name).put(selectedFile).then(function(bobbis){
-        console.log(bobbis)
     firebase.storage().ref().child('dogImages/' + selectedFile.name).getDownloadURL().then(function(url){
-            //console.log(url)
             let pictureURL = url
             $scope.dog.url = pictureURL
+            $scope.dog.shelteruid = currentId
             })
         })
     }
