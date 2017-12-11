@@ -1,5 +1,5 @@
 angular.module("AuthApp")
-.factory("AuthFactory", function ($http, $timeout, $location) {
+.factory("AuthFactory", function ($http, $timeout, $location, $route) {
     let currentUserData = null
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -7,10 +7,7 @@ angular.module("AuthApp")
         if (user) {
             currentUserData = user
             console.log("User is authenticated")
-            $timeout(function () {
-                $location.url("/auth/list")
-            }, 500);
-
+            $route.reload()
         } else {
             currentUserData = null
             console.log("User is not authenticated")

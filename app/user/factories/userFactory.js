@@ -65,37 +65,38 @@ angular
             }
         },
         "getInterestedDogs": {
-            value: function (key) {
+            value: function (user) {
                 return $http({
                     method: "GET",
-                    url: `https://frontend-e2cdb.firebaseio.com/users/${key}/interestedDogs/.json`
+                    url: `https://frontend-e2cdb.firebaseio.com/users/${user}/interestedDogs/.json`
                 }).then(response => {
+                    console.log(response, "THE RESPONSE")
                     let data = response.data;
 
-                    this.cache = Object.keys(data).map(key => {
+                    let interestedDogs = Object.keys(data).map(key => {
                         data[key].id = key
                         return data[key]
                     })
 
-                    return this.cache
+                    return interestedDogs
                 })
             }
 
         },
         "printInterestedDogs": {
-            value: function (key) {
+            value: function (user) {
                 return $http({
                     method: "GET",
                     url: `https://frontend-e2cdb.firebaseio.com/dogs/.json`
                 }).then(response => {
                     let data = response.data;
 
-                    this.cache = Object.keys(data).map(key => {
+                    let printInterestedDogs = Object.keys(data).map(key => {
                         data[key].id = key
                         return data[key]
                     })
 
-                    return this.cache
+                    return printInterestedDogs
                 })
             }
 

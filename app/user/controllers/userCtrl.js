@@ -2,13 +2,14 @@ angular
 .module("AuthApp")
 .controller("userCtrl", function (userFactory, factory, $scope, AuthFactory, $location) {
     $scope.dog = []
-    $scope.savedDog = []
+    // $scope.savedDogs = []
     $scope.shelter = []
     let dogData = []
-    let dogArray = []
+    $scope.savedDogs = []
     //let viewDogData = []
    //Get dogs from database
     userFactory.listDogs().then(data => {
+        console.log(data, "THE DATA")
         $scope.dog = data
     })
     //Get shelters to display shelter name with appropriate dog
@@ -55,8 +56,9 @@ angular
     }
 
     $scope.viewSavedDogs = function () {
+        $location.url('/user/viewSavedDogs')
         userFactory.listUsers().then(data => { 
-            $scope.savedDog = dogArray
+            
                 let theUser = data.filter(function (user) {
                     return user.uid === AuthFactory.getUser().uid
                 })[0]
@@ -73,19 +75,18 @@ angular
                         //if a dog.id = a value in the dogData array
                         if (dogData.indexOf(dog.id) >= 0) {
                            // let dogArray = []
-                            dogArray.push(dog)
-                            console.log(dogArray, "the dog array!!!!!")
-                        } else {
-                            console.log("you have no saved dogs!")
+                            $scope.savedDogs.push(dog)
+                            console.log($scope.savedDogs, "the dog array!!!!!")
+                            //$scope.savedDogs = dogArray
                         }
+                        // } else {
+                            //     console.log("you have no saved dogs!")
+                            // }
+                        })
                     })
-                    //console.log(dogData, "dogData two")
-                    //let viewDogs = viewDogData
-                    
-                    //$scope.savedDog = viewDogData
-                })
+                    console.log($scope.savedDogs, "the dog array!!!!!")
             })
         })
-        $location.url('/user/viewSavedDogs')
+        
     }
 }) 
