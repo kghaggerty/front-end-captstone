@@ -5,6 +5,9 @@
     
     <li class="align-right">
         <span ng-if="isAuthenticated()">
+                <a href="#!/chat/userChat" ng-click="viewChat()">Chat</a>
+                <br>
+                <!-- <span ng-include="'app/user/partials/userChat.html'"></span> -->
             <a href="#" ng-click="logout()">Logout</a>
         </span>
         <span ng-if="!isAuthenticated()"></span>

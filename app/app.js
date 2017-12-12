@@ -51,6 +51,11 @@ angular.module("AuthApp").config(function ($routeProvider) {
             controller: 'viewSavedDogsCtrl',
             resolve: { isAuth }
         })
+        .when('/chat/userChat', {
+            templateUrl: 'app/chat/partials/userChat.html',
+            controller: 'chatInputCtrl',
+            resolve: { isAuth }
+        })
         //Takes user to welcome/login page
         .otherwise('/auth/welcome')
 })
