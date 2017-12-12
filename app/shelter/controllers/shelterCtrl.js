@@ -1,6 +1,6 @@
 angular 
 .module("AuthApp")
-.controller("shelterCtrl", function ($scope, factory, shelterFactory, $timeout, AuthFactory){
+.controller("shelterCtrl", function ($scope, factory, shelterFactory, $timeout, AuthFactory, $location){
     let selectedFile; 
     let pictureURL;
     let currentId = AuthFactory.getUser().uid
@@ -30,5 +30,9 @@ angular
             $scope.dog.shelteruid = currentId
             })
         })
+    }
+    $scope.viewShelterDogsButton = function () {
+        console.log("you clicked")
+        $location.url('/shetler/viewShelterDogs')
     }
 })

@@ -1,6 +1,6 @@
 <h2>Welcome to the Chat!!</h2>
 <div ng-repeat="displaymessage in chatMessages">
-    {{ displaymessage.firstName }} {{ displaymessage.lastName }}: {{ displaymessage.message }}
+    {{ displaymessage.firstName }} {{ displaymessage.lastName }}: {{ displaymessage.message }} <br><div>{{ displaymessage.date }} </div>
 </div><br>
 <div class="chatBubble">
 <div class="chatUserName" ng-model="chatname"> {{ chatname.firstName }} {{ chatname.lastName }}</div>

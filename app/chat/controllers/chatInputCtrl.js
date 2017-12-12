@@ -37,13 +37,14 @@ angular
                     "firstName": theUser.firstName,
                     "lastName": theUser.lastName,
                     "message": stuff.chatInput,
-                    "id": theUser.id
+                    "id": theUser.id,
+                    "date": new Date()
+                    
                 }
                 chatFactory.postChat(inputPost)
                     .then(() => {
                         chatFactory.listChatMessages()
                             .then(result => {
-                                console.log("messages!!!", results)
                                 $scope.chatMessages = result
                             })
 
