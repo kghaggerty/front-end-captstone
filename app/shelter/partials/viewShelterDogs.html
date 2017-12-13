@@ -1,29 +1,48 @@
 <div>
-<div>
-    <h2>Here are all dogs you have posted!  Feel free to edit them OR you can click the "Found Home" button if they have been adopted!  We will create a special page for them to be displayed :)</h2>
-</div>
+    <div>
+        <h2>Here are all dogs you have posted! Feel free to edit them OR you can click the "Found Home" button if they have been
+            adopted! We will create a special page for them to be displayed :)</h2>
+    </div>
 
-<div ng-repeat="displayShelterOnly in dogsToDisplay">
+    <div ng-repeat="displayShelterOnly in dogsToDisplay">
 
         <div>
-            <img src="{{ displayShelterOnly.url }}" alt="Saved Dog Card" width="150" height="150"><br> {{ displayShelterOnly.name }}<br> {{ displayShelterOnly.age }}<br>
-            <button id="{{ displayShelterOnly.id }}" ng-click="editDog($event, displayShelterOnly)">Edit Info</button> <button ng-click="foundHome()">Found a Home</button>
-            
+            <img src="{{ displayShelterOnly.url }}" alt="Saved Dog Card" width="150" height="150">
+            <br> {{ displayShelterOnly.name }}
+            <br> {{ displayShelterOnly.age }}
+            <br>
+            <button id="{{ displayShelterOnly.id }}" ng-click="editDog(displayShelterOnly)">Edit Info</button>
+            <button ng-click="foundHome()">Found a Home</button>
+
         </div>
 
-</div>
+    </div>
 
-<h2>Edit dog here!</h2>
+    <h2>Edit dog here!</h2>
 
     <div>
-    <li>Dog Name:<input type="dogName" ng-model="dog.name"  autofocus></li>
-    <li>Dog Age<input type="dogAge" ng-model="dog.age"></li>
-    <li>Dog Size:<input type="dogSize" ng-model="dog.size"></li>
-    <li>Health Comments:<input type="dogHealth" ng-model="dog.health"></li>
-    <li>Good with other Animals?:<input type="dogAge" ng-model="dog.animals"></li>
-    <li>Good with children?:<input type="dogChildren" ng-model="dog.children"></li>
-    <li>Additional Comments:<input type="dogAdditional" ng-model="dog.additional"></li>
-    <button ng-click="editDogToDatabase()">Edit Dog</button>
+        <li>Dog Name:
+            <input type="dogName" ng-model="displayShelterOnly.name" autofocus>
+        </li>
+        <li>Dog Age
+            <input type="dogAge" ng-model="displayShelterOnly.age">
+        </li>
+        <li>Dog Size:
+            <input type="dogSize" ng-model="displayShelterOnly.size">
+        </li>
+        <li>Health Comments:
+            <input type="dogHealth" ng-model="displayShelterOnly.health">
+        </li>
+        <li>Good with other Animals?:
+            <input type="dogAge" ng-model="displayShelterOnly.animals">
+        </li>
+        <li>Good with children?:
+            <input type="dogChildren" ng-model="displayShelterOnly.children">
+        </li>
+        <li>Additional Comments:
+            <input type="dogAdditional" ng-model="displayShelterOnly.additional">
+        </li>
+        <button ng-click="editDogToDatabase()">Edit Dog</button>
     </div>
 
 </div>

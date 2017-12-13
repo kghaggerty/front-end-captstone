@@ -2,7 +2,9 @@ angular
     .module("AuthApp")
     .controller("viewShelterDogsCtrl", function ($scope, factory, userFactory, AuthFactory, $location, shelterFactory) {
         $scope.dogsToDisplay = []
-        $scope.dog = {}
+        $scope.displayShelterOnly = {}
+        let currentDogId = null 
+
         //Grab all dogs
         userFactory.listDogs().then(data => {
             //Find current user authentication ID
@@ -14,15 +16,20 @@ angular
                 }
             })
         })
-        $scope.editDog = function ($event, displayShelterOnly) {
-            let key = $event.target.id
-            // console.log(key, "Dog ID")
-            $scope.dog.name = displayShelterOnly.name
-            $scope.dog.age = displayShelterOnly.age
-            $scope.dog.size = displayShelterOnly.size
-            $scope.dog.health = displayShelterOnly.health
-            $scope.dog.animals = displayShelterOnly.animals
-            $scope.dog.children = displayShelterOnly.children
-            $scope.dog.additional = displayShelterOnly.additional
+        $scope.editDog = function (displayShelterOnly) {
+            //Get single dog factory function.  Input single key from displayshelteronly.id
+            //Put that dog equal to $scope.displayShelterOnly right below
+            currentDogId = displayShelterOnly.id
+            shelterFactory.getSingleDog(displayShelterOnly.id).then(response => {
+                console.log(response, "single dog")
+                $scope.displayShelterOnly = response.data
+            })
+        }
+
+        $scope.editDogToDatabase = function () {
+            shelterFactory.editShelterDog(currentDogId, $scope.displayShelterOnly).then(data => {
+                $scope.displayShelterOnly = {}
+
+            })
         }
     })

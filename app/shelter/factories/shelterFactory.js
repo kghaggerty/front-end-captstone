@@ -3,7 +3,7 @@ angular
     .factory("shelterFactory", function ($http, $routeParams) {
         return Object.create(null, {
             "postDog": {
-                value: function(dog) {
+                value: function (dog) {
                     return $http({
                         "url": "https://frontend-e2cdb.firebaseio.com/dogs/.json",
                         "method": "POST",
@@ -12,13 +12,21 @@ angular
                 }
             },
             "editShelterDog": {
-                value: function (key) {
+                value: function (id, dog) {
                     return $http({
                         method: "PUT",
-                        url: `https://frontend-e2cdb.firebaseio.com/dogs/${key}/.json`,
-                        data: user
+                        url: `https://frontend-e2cdb.firebaseio.com/dogs/${id}/.json`,
+                        data: dog
                     })
                 }
             },
+            "getSingleDog": {
+                value: function (key) {
+                    return $http({
+                        method: "GET",
+                        url: `https://frontend-e2cdb.firebaseio.com/dogs/${key}/.json`
+                    })
+                }
+            }
         })
     })

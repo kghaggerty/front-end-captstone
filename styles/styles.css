@@ -19,3 +19,7 @@ input#file {
 .dog-pic-li {
     float: left;
 }
+
+.hidden {
+    display: none;
+}
