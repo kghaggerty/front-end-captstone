@@ -1,1 +1,14 @@
 <h2>All shelters will be listed here!</h2>
+
+<div ng-repeat="displayAllShetlers in shelterDisplay">
+        
+    <div>
+        <a href="mailto:example@email.com">{{ displayAllShetlers.email }}</a>
+        <br> {{ displayAllShetlers.sheltername }}
+        <br> 
+        <br> {{ displayAllShetlers.address }}
+        <br>
+
+    </div>
+        
+</div>

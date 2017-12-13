@@ -29,19 +29,19 @@ angular
                 }
             },
             "listShelters": {
-                value: function () {
+                value: function (user) {
                     return $http({
                         method: "GET",
                         url: "https://frontend-e2cdb.firebaseio.com/shelter/.json"
                     }).then(response => {
                         let data = response.data;
 
-                        this.cache = Object.keys(data).map(key => {
+                        let listShelters = Object.keys(data).map(key => {
                             data[key].id = key
                             return data[key]
                         })
 
-                        return this.cache
+                        return listShelters
                     })
                 }
             },
