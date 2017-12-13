@@ -1,7 +1,8 @@
 angular
     .module("AuthApp")
-    .controller("viewShelterDogsCtrl", function ($scope, factory, userFactory, AuthFactory, $location) {
+    .controller("viewShelterDogsCtrl", function ($scope, factory, userFactory, AuthFactory, $location, shelterFactory) {
         $scope.dogsToDisplay = []
+        $scope.dog = {}
         //Grab all dogs
         userFactory.listDogs().then(data => {
             //Find current user authentication ID
@@ -13,4 +14,15 @@ angular
                 }
             })
         })
+        $scope.editDog = function ($event, displayShelterOnly) {
+            let key = $event.target.id
+            // console.log(key, "Dog ID")
+            $scope.dog.name = displayShelterOnly.name
+            $scope.dog.age = displayShelterOnly.age
+            $scope.dog.size = displayShelterOnly.size
+            $scope.dog.health = displayShelterOnly.health
+            $scope.dog.animals = displayShelterOnly.animals
+            $scope.dog.children = displayShelterOnly.children
+            $scope.dog.additional = displayShelterOnly.additional
+        }
     })

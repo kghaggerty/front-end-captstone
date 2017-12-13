@@ -11,5 +11,14 @@ angular
                     })
                 }
             },
+            "editShelterDog": {
+                value: function (key) {
+                    return $http({
+                        method: "PUT",
+                        url: `https://frontend-e2cdb.firebaseio.com/dogs/${key}/.json`,
+                        data: user
+                    })
+                }
+            },
         })
     })

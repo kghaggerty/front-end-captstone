@@ -32,7 +32,6 @@ angular
         })
     }
     $scope.viewShelterDogsButton = function () {
-        console.log("you clicked")
-        $location.url('/shetler/viewShelterDogs')
+        $location.url('/shelter/viewShelterDogs')
     }
 })
