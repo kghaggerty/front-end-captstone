@@ -1,15 +1,25 @@
 angular.module("AuthApp")
-.controller("AuthCtrl", function($scope, $location, AuthFactory, factory, userFactory) {
+.controller("AuthCtrl", function($scope, $location, AuthFactory, factory, userFactory, shelterFactory) {
     $scope.auth = {}
     
     
     $scope.logMeInShelter = function (credentials) {
         AuthFactory.authenticate(credentials).then(function (didLogin) {
-            credentials.uid = didLogin.uid
-            factory.postShelter(credentials)      
+            shelterFactory.listShelters().then(data => { 
+                let theUser = data.filter(function (user) {
+                    return credentials.email === user.email
+                })[0]
+
+                credentials.uid = didLogin.uid
+
+                if (theUser == undefined || theUser == null) {
+                    factory.postShelter(credentials)
+                }
+             
             $scope.login = {}
             $scope.register = {}
             $location.url('/shelter/shelterWelcome')
+            })
         })
     }
     $scope.logMeInUser = function (credentials) {

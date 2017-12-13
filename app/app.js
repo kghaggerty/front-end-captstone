@@ -61,11 +61,10 @@ angular.module("AuthApp").config(function ($routeProvider) {
             controller: 'viewShelterDogsCtrl',
             resolve: { isAuth }
         })
-        // .when('/shelter/editShelterDogs', {
-        //     templateUrl: 'app/shelter/partials/editShelterDog.html',
-        //     controller: 'editShelterDogCtrl',
-        //     resolve: { isAuth }
-        // })
-        //Takes user to welcome/login page
+        .when('/user/viewAllShelters', {
+            templateUrl: 'app/user/partials/viewAllShelters.html',
+            controller: 'viewAllSheltersCtrl',
+            resolve: { isAuth }
+        })
         .otherwise('/auth/welcome')
 })
