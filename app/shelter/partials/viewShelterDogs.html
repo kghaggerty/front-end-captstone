@@ -6,6 +6,7 @@
 <div ng-repeat="displayShelterOnly in dogsToDisplay">
         <div>
             <img src="{{ displayShelterOnly.url }}" alt="Saved Dog Card" width="150" height="150"><br> {{ displayShelterOnly.name }}<br> {{ displayShelterOnly.age }}<br>
+            <button ng-click="editDog()">Edit Info</button> <button ng-click="foundHome()">Found a Home</button>
             
         </div>
 </div>
