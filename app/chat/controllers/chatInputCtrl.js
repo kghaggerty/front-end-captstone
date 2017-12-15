@@ -8,14 +8,6 @@ angular
         chatFactory.listChatMessages().then(result => {
             $scope.chatMessages = result
         })
-        //get post button from chat
-        // let whatever = document.getElementById = ('postButton')
-
-        // whatever.addEventListener("click", getChat = function () {
-        //     chatFactory.listChatMessages().then(result => {
-        //         $scope.chatMessages = result
-        //     })
-        // })
 
         $scope.input = {}
         //getting user first and last name to display for chat message input
@@ -25,6 +17,7 @@ angular
             })[0]
             $scope.chatname = theUser
         })
+        
         //gathering message and user information to post to firebase
         $scope.chatPostButton = function (stuff) {
             userFactory.listUsers().then(data => {
@@ -38,11 +31,10 @@ angular
                     "lastName": theUser.lastName,
                     "message": stuff.chatInput,
                     "id": theUser.id,
-                    "date": new Date()
-                    
                 }
                 chatFactory.postChat(inputPost)
                     .then(() => {
+                        $scope.input.chatInput = ""
                         chatFactory.listChatMessages()
                             .then(result => {
                                 $scope.chatMessages = result

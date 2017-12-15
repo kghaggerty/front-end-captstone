@@ -1,13 +1,18 @@
 <h2>Welcome to the Chat!!</h2>
 <div ng-repeat="displaymessage in chatMessages">
-    {{ displaymessage.firstName }} {{ displaymessage.lastName }}: {{ displaymessage.message }} <br><div>{{ displaymessage.date }} </div>
-</div><br>
+    {{ displaymessage.firstName }} {{ displaymessage.lastName }}: {{ displaymessage.message }}
+    <br>
+    <div>{{ displaymessage.date }} </div>
+</div>
+<br>
 <div class="chatBubble">
-<div class="chatUserName" ng-model="chatname"> {{ chatname.firstName }} {{ chatname.lastName }}</div>
-<input id="text" type="text" ng-model="input.chatInput" placeholder="Message"><br/>
-<button id="postButton" ng-click="chatPostButton(input)">Post</button><br/>
-<div id="results"></div>
-<script>
+    <div class="chatUserName" ng-model="chatname"> {{ chatname.firstName }} {{ chatname.lastName }}</div>
+    <input id="text" type="text" ng-model="input.chatInput" placeholder="Type Here">
+    <br/>
+    <button id="postButton" ng-click="chatPostButton(input)">Post</button>
+    <br/>
+    <div id="results"></div>
+    <script>
 // we'll be adding code here
-</script>
+    </script>
 </div>

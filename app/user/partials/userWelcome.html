@@ -5,10 +5,15 @@
 <div ng-repeat="dogs in dog">
     <div>
         <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150">
-        <br> {{ dogs.name }}
-        <br> {{ dogs.age }}
-        <br>
+        <br> Name: {{ dogs.name }}
+        <br>Age: {{ dogs.age }}
+        <br>Age: {{ dogs.size }}
+        <br> Good with animals?: {{ dogs.animals }}
+        <br>Good with Children?: {{ dogs.children }}
+        <br>Additional Comments: {{ dogs.additional }}
     </div>
     <button ng-click="InterestedButton($event)" id="{{ dogs.id }}">Interested</button>
     <button id="{{ dogs.id }}" ng-click="notInterestedButton($event)">Not Interested</button>
+    <br>
+    <br>
 </div>

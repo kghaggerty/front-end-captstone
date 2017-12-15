@@ -3,8 +3,11 @@
 <div ng-repeat="viewDog in savedDogs">
     <div>
         <img src="{{ viewDog.url }}" alt="Saved Dog Card" width="150" height="150">
-        <br> {{ viewDog.name }}
-        <br> {{ viewDog.age }}
-        <br>
+        <br> Name: {{ viewDog.name }}
+        <br>Age: {{ viewDog.age }}
+        <br>Age: {{ viewDog.size }}
+        <br> Good with animals?: {{ viewDog.animals }}
+        <br>Good with Children?: {{ viewDog.children }}
+        <br>Additional Comments: {{ viewDog.additional }}
     </div>
 </div>
