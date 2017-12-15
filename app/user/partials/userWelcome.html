@@ -2,7 +2,7 @@
 <div>
     <button ng-click="viewSavedDogs()" id="savedDogsButton">View Saved Dogs</button>
 </div>
-<div ng-repeat="dogs in dog">
+<div ng-repeat="dogs in dogsToDisplay">
     <div>
         <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150">
         <br> Name: {{ dogs.name }}
@@ -12,8 +12,8 @@
         <br>Good with Children?: {{ dogs.children }}
         <br>Additional Comments: {{ dogs.additional }}
     </div>
-    <button ng-click="InterestedButton($event)" id="{{ dogs.id }}">Interested</button>
-    <button id="{{ dogs.id }}" ng-click="notInterestedButton($event)">Not Interested</button>
+    <button ng-click="InterestedButton($event, dogs)" id="{{ dogs.id }}">Interested</button>
+    <button id="{{ dogs.id }}" ng-click="notInterestedButton($event, dogs)">Not Interested</button>
     <br>
     <br>
 </div>
