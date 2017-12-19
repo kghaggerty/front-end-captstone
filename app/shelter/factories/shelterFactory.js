@@ -45,5 +45,15 @@ angular
                     })
                 }
             },
+            "postHomeDog": {
+                value: function (id, dog) {
+                    dog.home = true
+                    return $http({
+                        method: "PUT",
+                        url: `https://frontend-e2cdb.firebaseio.com/dogs/${id}/.json`,
+                        data: dog
+                    })
+                }
+            }    
         })
     })

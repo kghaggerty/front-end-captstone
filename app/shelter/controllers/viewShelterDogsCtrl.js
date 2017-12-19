@@ -32,4 +32,14 @@ angular
 
             })
         }
+
+        $scope.foundHome = function (displayShelterOnly) {
+            console.log("You clicked the button!")
+            shelterFactory.getSingleDog(displayShelterOnly.id).then(response => {
+                console.log(response, "single dog")
+                console.log(displayShelterOnly.id, "shelter ID")
+                //$scope.displayShelterOnly = response.data
+                shelterFactory.postHomeDog(displayShelterOnly.id, response.data)
+            })
+        }
     })

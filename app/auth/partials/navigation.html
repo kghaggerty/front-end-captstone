@@ -1,17 +1,23 @@
-<ul ng-controller="navCtrl">
-        <!-- <li><a href="/#!/employees/list">List Employees</a></li>
-        <li><a href="/#!/employees/new">Add Employee</a></li>
-        <li><span ng-include="'app/navigation/partials/search.html'"></span></li> -->
-    
-    <li class="align-right">
+<nav ng-controller="navCtrl" class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid">
         <span ng-if="isAuthenticated()">
-                <a href="#!/chat/userChat" ng-click="viewChat()">Chat</a>
-                <br>
-                <a href="#!/user/viewAllShelters" ng-click="viewAllShelters()">View All Shelters</a>
-                <br>
+            <ul class="nav">
+                <!-- Navbar content -->
+                <li class="nav-item">
+                    <a href="#!/chat/userChat" ng-click="viewChat()">Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a "nav-link" href="#!/user/viewAllShelters" ng-click="viewAllShelters()">View All Shelters  </a>
+                </li>
+                <li class="nav-item">
+                    <a "nav-link" href="#!/user/dogsFoundHome" ng-click="dogsFoundHome()">Dogs Who Found A Home</a>
+                </li>
                 <!-- <span ng-include="'app/user/partials/userChat.html'"></span> -->
-            <a href="#" ng-click="logout()">Logout</a>
+                <li class="nav-item">
+                    <a "nav-link" href="#" ng-click="logout()">Logout<br></a>
+                </li>
+                <!-- <span ng-if="!isAuthenticated()"> -->
+            </ul>
         </span>
-        <span ng-if="!isAuthenticated()"></span>
-    </li>
-</ul>
+    </div>
+</nav>

@@ -1,7 +1,11 @@
-.align-right {
-    float: right; 
-    list-style-type: none;
+body{
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Kalam', cursive;
 }
+
+/* .thebackground {
+    background-color: #f8c68c;
+} */
 
 label.upload-group {
    width: 100px;
@@ -22,4 +26,52 @@ input#file {
 
 .hidden {
     display: none;
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+/* LOGIN BOX */
+.log-in-button {
+    margin-top: 20px;
+    background-color: #f8c68c;
+    border: #dbd5a4;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-left: 25%;
+    
+}
+
+/* BANNER STYLING HOME PAGE */
+.banner-home {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner {
+    background: #649173; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #649173, #dbd5a4); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #649173, #dbd5a4);
+}
+
+.banner-home-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner-home-image {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 80%;
+    border: 1px solid rgb(255, 254, 222); 
+    background-color: rgb(252, 244, 227);
+}
+
+.mango {
+    border-radius: 100px 100px;
 }

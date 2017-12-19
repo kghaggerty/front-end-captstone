@@ -66,5 +66,10 @@ angular.module("AuthApp").config(function ($routeProvider) {
             controller: 'viewAllSheltersCtrl',
             resolve: { isAuth }
         })
+        .when('/user/dogsFoundHome', {
+            templateUrl: 'app/user/partials/dogsFoundHome.html',
+            controller: 'dogsFoundHomeCtrl',
+            resolve: { isAuth }
+        })
         .otherwise('/auth/welcome')
 })

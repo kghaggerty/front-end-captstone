@@ -12,7 +12,7 @@
             <br> {{ displayShelterOnly.age }}
             <br>
             <button id="{{ displayShelterOnly.id }}" ng-click="editDog(displayShelterOnly)">Edit Info</button>
-            <button ng-click="foundHome()">Found a Home</button>
+            <button ng-click="foundHome(displayShelterOnly)" id="{{ displayShelterOnly.id }}">Found a Home</button>
 
         </div>
 

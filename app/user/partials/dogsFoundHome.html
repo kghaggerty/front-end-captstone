@@ -1,0 +1,15 @@
+<h2>These Dogs Have Found A Home!!!</h2>
+
+<div ng-repeat="dogs in dogsToDisplay">
+        <div>
+            <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150">
+            <br> Name: {{ dogs.name }}
+            <br>Age: {{ dogs.age }}
+            <br>Age: {{ dogs.size }}
+            <br> Good with animals?: {{ dogs.animals }}
+            <br>Good with Children?: {{ dogs.children }}
+            <br>Additional Comments: {{ dogs.additional }}
+        </div>
+        <br>
+        <br>
+    </div>

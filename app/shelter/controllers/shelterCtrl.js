@@ -28,6 +28,7 @@ angular
             let pictureURL = url
             $scope.dog.url = pictureURL
             $scope.dog.shelteruid = currentId
+            $scope.dog.home = false
             })
         })
     }
