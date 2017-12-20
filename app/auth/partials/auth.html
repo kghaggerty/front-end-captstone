@@ -1,8 +1,25 @@
-<div>
-    If you are a user seeking a new best friend, log in here! <br>
-    <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus>
-    <input type="password" placeholder="Password" ng-model="auth.password">
-    <!-- <button ng-click="registerNewAccount()">Create User Account</button>
+<div class="container-fluid">
+    <img class="mango-login" src="../../app/img/BlueSkies.jpg" alt="banner" width="500" height="400">
+    <div class="container-fluid login-container">
+        <div class="form-group login-box">
+            <div class="col-sm-10 banner-login-text">
+                If you are seeking a new best friend,
+                <br>&nbsp log in here!
+            </div>
+            <br>
+            <div class="col-sm-10">
+                <input type="email" placeholder="Email address" ng-model="auth.email" autofocus>
+            </div>
+            <br>
+            <div class="col-sm-10">
+                <input type="password" placeholder="Password" ng-model="auth.password">
+            </div>
+            <br>
+            <!-- <button ng-click="registerNewAccount()">Create User Account</button>
     <button ng-click="registerNewShelter()">Create Shelter Account</button> -->
-    <button ng-click="logMeInUser(auth)">Login</button>
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary user-login-button" ng-click="logMeInUser(auth)">Login</button>
+            </div>
+        </div>
+    </div>
 </div>

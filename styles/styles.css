@@ -35,7 +35,7 @@ input#file {
 /* LOGIN BOX */
 .log-in-button {
     margin-top: 20px;
-    background-color: #f8c68c;
+    background-color: #fab76a;
     border: #dbd5a4;
     padding-left: 200px;
     padding-right: 200px;
@@ -50,12 +50,6 @@ input#file {
     color: white;
 }
 
-.banner {
-    background: #649173; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #649173, #dbd5a4); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #649173, #dbd5a4);
-}
-
 .banner-home-text {
     position: absolute;
     top: 30%;
@@ -67,11 +61,56 @@ input#file {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 80%;
-    border: 1px solid rgb(255, 254, 222); 
-    background-color: rgb(252, 244, 227);
+    border-radius: 50%;
+    border: 1px solid rgb(136, 173, 190); 
+    background-color: rgb(255, 255, 255);
+    box-shadow: .2px .2px .5px .2px #888888;
 }
 
 .mango {
-    border-radius: 100px 100px;
+    border-radius: 10px;
+    -webkit-filter: blur(1px);
+}
+
+/* USER LOG IN PAGE */ /* SHELTER LOGIN PAGE */
+
+.mango-login {
+    border-radius: 10px;
+    -webkit-filter: blur(1px);
+    margin-left: 250px;
+}
+
+.banner-login-text {
+    position: absolute;
+    transform: translate(-18%, -90%);
+}
+
+.login-container {
+    display: inline-block;
+    padding-left: 370px;
+    padding-bottom: 500px;
+    position: relative;
+    text-align: center;
+    transform: translate(-15%, -40%);
+}
+
+.user-login-button {
+    background-color: #fab76a;
+    border: #dbd5a4;
+}
+
+.shelter-login-text {
+    padding-bottom: 30px;
+}
+
+
+/* CREATE NEW ACCOUNT */
+
+.mango-register {
+    border-radius: 10px;
+    -webkit-filter: blur(1px);
+}
+.banner-register-text {
+    position: absolute;
+    transform: translate(-12%, -50%);
 }
