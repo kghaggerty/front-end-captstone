@@ -9,7 +9,15 @@ angular
         $scope.dogsToDisplay = []
         let notInterestedDogs;
         let interestedDogs;
-
+        
+        //Display current user first name at top
+        userFactory.listUsers().then(data => {
+            let theUser = data.filter(function (user) {
+                return user.uid === AuthFactory.getUser().uid
+            })[0]
+            console.log(theUser.firstName, "THEUSERR")
+            $scope.CurrentUser = theUser.firstName
+        })
         //Get shelters to display shelter name with appropriate dog
         factory.listShelter().then(data => {
             $scope.shelter = data

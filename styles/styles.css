@@ -114,3 +114,22 @@ input#file {
     position: absolute;
     transform: translate(-12%, -50%);
 }
+
+/* USER REGISTER */
+.banner-user-register-text {
+    position: absolute;
+    transform: translate(25%, -600%);
+}
+
+/* USER WELCOME PAGE */
+
+.interested-button {
+    margin-bottom: 6px;
+}
+.not-interested-button {
+    margin-bottom: 2px;
+}
+
+.dog-card {
+    background-color: rgb(253, 219, 186)
+}

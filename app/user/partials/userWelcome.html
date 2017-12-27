@@ -1,19 +1,34 @@
-<h2>Welcome, user!</h2>
+<br>
+<h2 ng-model="CurrentUser">Welcome, {{ CurrentUser }}!</h2>
+<br>
 <div>
-    <button ng-click="viewSavedDogs()" id="savedDogsButton">View Saved Dogs</button>
+    <button ng-click="viewSavedDogs()" id="savedDogsButton">View Saved Dogs</button><br><br>
 </div>
-<div ng-repeat="dogs in dogsToDisplay">
-    <div>
-        <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150">
-        <br> Name: {{ dogs.name }}
-        <br>Age: {{ dogs.age }}
-        <br>Age: {{ dogs.size }}
-        <br> Good with animals?: {{ dogs.animals }}
-        <br>Good with Children?: {{ dogs.children }}
-        <br>Additional Comments: {{ dogs.additional }}
-    </div>
-    <button ng-click="InterestedButton($event, dogs)" id="{{ dogs.id }}">Interested</button>
-    <button id="{{ dogs.id }}" ng-click="notInterestedButton($event, dogs)">Not Interested</button>
-    <br>
-    <br>
+<div class="container">
+<div class="row">
+    
+        <div class="card col-sm-4 dog-card" style="width: 10rem;" ng-repeat="dogs in dogsToDisplay">
+            <div class="card-body">
+                <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="200">
+                <br>
+                <div class="cart-title">
+                    <h2>{{ dogs.name }}
+                        <h2>
+                </div>
+                <p class="card-text">
+                    <br>Age: {{ dogs.age }}
+                    <br>Age: {{ dogs.size }}
+                    <br> Good with animals?: {{ dogs.animals }}
+                    <br>Good with Children?: {{ dogs.children }}
+                    <br>Additional Comments: {{ dogs.additional }}
+                </p>
+            </div>
+            <button class="btn btn-primary user-login-button interested-button" ng-click="InterestedButton($event, dogs)" id="{{ dogs.id }}">Interested</button>
+            <button class="btn btn-primary user-login-button not-interested-button" id="{{ dogs.id }}" ng-click="notInterestedButton($event, dogs)">Not Interested</button>
+        </div>
+        <br>
+        <br>
+        <br>
+    
+</div>
 </div>
