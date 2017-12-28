@@ -1,11 +1,15 @@
 body{
-    font-family: 'Indie Flower', cursive;
-    font-family: 'Kalam', cursive;
+    /* font-family: 'Indie Flower', cursive;
+    font-family: 'Kalam', cursive; */
+    font-family: 'Quicksand', sans-serif;
 }
 
-/* .thebackground {
-    background-color: #f8c68c;
-} */
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #dbcbb3;
+    border-color: #bbcad6; /*set the color you want here*/
+}
+
 
 label.upload-group {
    width: 100px;
@@ -35,8 +39,8 @@ input#file {
 /* LOGIN BOX */
 .log-in-button {
     margin-top: 20px;
-    background-color: #fab76a;
-    border: #dbd5a4;
+    background-color: #4d4d4da9;
+    border: #3a3a3a;
     padding-left: 200px;
     padding-right: 200px;
     margin-left: 25%;
@@ -50,12 +54,25 @@ input#file {
     color: white;
 }
 
+
 .banner-home-text {
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 3px 1px 8px rgba(27, 27, 27, 0.507);
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
 }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .banner-home-image {
     position: absolute;
     top: 80%;
@@ -70,6 +87,16 @@ input#file {
 .mango {
     border-radius: 10px;
     -webkit-filter: blur(1px);
+}
+
+.button-home {
+    position: absolute;
+    transform: translate(-12%, -180%);
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
 }
 
 /* USER LOG IN PAGE */ /* SHELTER LOGIN PAGE */
@@ -103,6 +130,9 @@ input#file {
     padding-bottom: 30px;
 }
 
+.welcome-text {
+    line-height: 30px;
+}
 
 /* CREATE NEW ACCOUNT */
 
@@ -131,5 +161,12 @@ input#file {
 }
 
 .dog-card {
-    background-color: rgb(253, 219, 186)
+    background-color: rgb(253, 219, 186);
+    margin-bottom: 5px;
+    /* margin-right: 1px; */
+}
+
+.dog-picture {
+    border: 1px solid rgb(14, 11, 9);
+    border-radius: 80%;
 }
