@@ -1,20 +1,20 @@
-<nav ng-controller="navCtrl" class="navbar navbar-expand-sm bg-light navbar-light">
+<nav ng-controller="navCtrl" class="navbar navbar-expand-sm" style="background-color:rgb(253, 246, 216)">
     <div class="container-fluid">
         <span ng-if="isAuthenticated()">
             <ul class="nav">
                 <!-- Navbar content -->
                 <li class="nav-item">
-                    <a href="#!/chat/userChat" ng-click="viewChat()">Chat</a>
+                    <a class="navbar-link" href="#!/chat/userChat" ng-click="viewChat()">Chat</a>
                 </li>
                 <li class="nav-item">
-                    <a "nav-link" href="#!/user/viewAllShelters" ng-click="viewAllShelters()">View All Shelters  </a>
+                    <a "nav-link" class="navbar-link" href="#!/user/viewAllShelters" ng-click="viewAllShelters()">View All Shelters  </a>
                 </li>
                 <li class="nav-item">
-                    <a "nav-link" href="#!/user/dogsFoundHome" ng-click="dogsFoundHome()">Dogs Who Found A Home</a>
+                    <a "nav-link" class="navbar-link" href="#!/user/dogsFoundHome" ng-click="dogsFoundHome()">Dogs Who Found A Home</a>
                 </li>
                 <!-- <span ng-include="'app/user/partials/userChat.html'"></span> -->
                 <li class="nav-item">
-                    <a "nav-link" href="#" ng-click="logout()">Logout<br></a>
+                    <a "nav-link" class="navbar-link" href="#" ng-click="logout()">Logout<br></a>
                 </li>
                 <!-- <span ng-if="!isAuthenticated()"> -->
             </ul>

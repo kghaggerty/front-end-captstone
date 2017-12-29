@@ -1,15 +1,21 @@
-<h2>These Dogs Have Found A Home!!!</h2>
-
-<div ng-repeat="dogs in dogsToDisplay">
-        <div>
-            <img src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150">
-            <br> Name: {{ dogs.name }}
-            <br>Age: {{ dogs.age }}
-            <br>Age: {{ dogs.size }}
-            <br> Good with animals?: {{ dogs.animals }}
-            <br>Good with Children?: {{ dogs.children }}
-            <br>Additional Comments: {{ dogs.additional }}
+<img class="dog-home-body" src="../../app/img/RelaxingRed.jpg" alt="banner" width="100%" height="100%">
+<div class="dog-home-container">
+    <br>
+    <h2>These Dogs Have Found A Home!!!</h2>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="card col-sm-3 dog-card dog-card" style="width: 10rem;">
+                <div ng-repeat="dogs in dogsToDisplay">
+                    <div class="card-body">
+                        <img class="dog-picture" src="{{ dogs.url }}" alt="Dog Picture" width="150" height="150">
+                        <br>
+                        <h2>{{ dogs.name }}</h2>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
         </div>
-        <br>
-        <br>
     </div>
+</div>

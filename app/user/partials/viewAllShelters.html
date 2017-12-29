@@ -1,14 +1,17 @@
-<h2>All shelters will be listed here!</h2>
+<img class="all-shelter-body" src="../../app/img/RelaxingRed.jpg" alt="banner" width="100%" height="100%">
+<div class="all-shelter-container container-fluid">
+    <br>
+    <h2>List of current shelters</h2>
 
-<div ng-repeat="displayAllShetlers in shelterDisplay">
-        
-    <div>
-        <a href="mailto:{{ displayAllShetlers.email }}">{{ displayAllShetlers.email }}</a>
-        <br> {{ displayAllShetlers.shelterName }}
-        <br> 
-        <br> {{ displayAllShetlers.address }}
-        <br>
+    <div ng-repeat="displayAllShetlers in shelterDisplay">
+
+        <div>
+            <a href="mailto:{{ displayAllShetlers.email }}">{{ displayAllShetlers.email }}</a>
+            <br> {{ displayAllShetlers.shelterName }}
+            <br> {{ displayAllShetlers.address }}
+            <br>
+
+        </div>
 
     </div>
-        
 </div>

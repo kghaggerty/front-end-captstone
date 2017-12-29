@@ -29,6 +29,10 @@ angular
             $scope.dog.url = pictureURL
             $scope.dog.shelteruid = currentId
             $scope.dog.home = false
+            shelterFactory.listShelters().then(response => {
+                //console.log(response[0].email, "THE EMAIL")
+                $scope.dog.email= response[0].email
+            })
             })
         })
     }
