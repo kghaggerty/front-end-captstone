@@ -53,6 +53,10 @@ input#file {
     border-bottom: solid black 1px;
 }
 
+.nav-home {
+    right: 30%;
+}
+
 /* LOGIN BOX */
 .log-in-button {
     margin-top: 20px;
@@ -77,8 +81,8 @@ input#file {
     font-size: 5rem;
     top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 3px 1px 8px rgba(27, 27, 27, 0.507);
+    transform: translate(-50%, -700%);
+    text-shadow: 3px 1px 8px rgba(27, 27, 27, 0.925);
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
      -ms-animation: fadein 2s; /* Internet Explorer */
@@ -103,8 +107,8 @@ input#file {
 }
 
 .mango {
-    border-radius: 10px;
-    -webkit-filter: blur(1px);
+    border-radius: 2px;
+    -webkit-filter: blur(.5px);
 }
 
 .button-home {
@@ -122,7 +126,7 @@ input#file {
 .mango-login {
     border-radius: 10px;
     -webkit-filter: blur(1px);
-    margin-left: 250px;
+    margin-left: 30%;
 }
 
 .banner-login-text {
@@ -137,16 +141,16 @@ input#file {
     padding-bottom: 500px;
     position: relative;
     text-align: center;
-    transform: translate(-15%, -40%);
+    transform: translate(-13%, -40%);
 }
 .paw-print-user-login-one {
     position: relative;
-    right: 160px;
+    right: 25%;
     top: 46px;
 }
 .paw-print-user-login-two {
     position: relative;
-    right: 160px;
+    right: 25%;
     top: 51px;
 }
 
@@ -181,7 +185,6 @@ input#file {
 }
 
 /* USER WELCOME PAGE */
-
 .interested-button {
     margin-bottom: 2px;
     background-color: #e07474;
