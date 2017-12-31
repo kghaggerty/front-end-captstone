@@ -1,48 +1,71 @@
-<div>
-    <div>
-        <h2>Here are all dogs you have posted! Feel free to edit them OR you can click the "Found Home" button if they have been
-            adopted! We will create a special page for them to be displayed :)</h2>
+<div class="dog-home-body" style="opacity: .9">
+    <br>
+    <div class="current-user-text">
+        <h2>View and edit all dogs you have posted.
+            <br> Click "found a home" to add them to our special page!</h2>
     </div>
+    <br>
+    <div class="container">
+        <div class="row">
 
-    <div ng-repeat="displayShelterOnly in dogsToDisplay">
+            <div class="card col-sm-3 dog-card" style="width: 10rem;" ng-repeat="displayShelterOnly in dogsToDisplay">
+                <div class="card-body">
+                    <img class="dog-picture" src="{{ displayShelterOnly.url }}" alt="Dog Picture" width="150" height="150">
+                    <br>
+                    <div class="cart-title">
+                        <h2>{{ displayShelterOnly.name }}
+                            <h2>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary user-login-button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            View Details
+                        </button>
+                        <br>
+                        <div class="dropdown-menu">
+                            <p class="dropdown-item">Age: {{ displayShelterOnly.age }}</p>
+                            <p class="dropdown-item">Age: {{ displayShelterOnly.size }}</p>
+                            <p class="dropdown-item">Health: {{ displayShelterOnly.health }}</p>
+                            <p class="dropdown-item">Good with Children?: {{ displayShelterOnly.children }}</p>
+                            <p class="dropdown-item">Good with animals?: {{ displayShelterOnly.animals }}</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="dropdown-item">Additional Comments: {{ displayShelterOnly.additional }}</p>
+                        </div>
+                        <br>
+                        <button class ="btn btn-primary user-login-button edit-dog-button"id="{{ displayShelterOnly.id }}" ng-click="editDog(displayShelterOnly)">Edit Info</button>
+                        <button class ="btn btn-primary user-login-button found-home-button"ng-click="foundHome(displayShelterOnly)" id="{{ displayShelterOnly.id }}">Found a Home</button>
+                    </div>
+                </div>
 
-        <div>
-            <img src="{{ displayShelterOnly.url }}" alt="Saved Dog Card" width="150" height="150">
-            <br> {{ displayShelterOnly.name }}
-            <br> {{ displayShelterOnly.age }}
-            <br>
-            <button id="{{ displayShelterOnly.id }}" ng-click="editDog(displayShelterOnly)">Edit Info</button>
-            <button ng-click="foundHome(displayShelterOnly)" id="{{ displayShelterOnly.id }}">Found a Home</button>
-
+            </div>
         </div>
 
+        <br>
+        <h2>Edit dog here!</h2>
+
+        <div class="edit-dog-container">
+            <li>Dog Name:
+                <input type="dogName" ng-model="displayShelterOnly.name" autofocus>
+            </li>
+            <li>Dog Age
+                <input type="dogAge" ng-model="displayShelterOnly.age">
+            </li>
+            <li>Dog Size:
+                <input type="dogSize" ng-model="displayShelterOnly.size">
+            </li>
+            <li>Health Comments:
+                <input type="dogHealth" ng-model="displayShelterOnly.health">
+            </li>
+            <li>Good with other Animals?:
+                <input type="dogAge" ng-model="displayShelterOnly.animals">
+            </li>
+            <li>Good with children?:
+                <input type="dogChildren" ng-model="displayShelterOnly.children">
+            </li>
+            <li>Additional Comments:
+                <input type="dogAdditional" ng-model="displayShelterOnly.additional">
+            </li>
+            <button ng-click="editDogToDatabase()">Edit Dog</button>
+        </div>
     </div>
-
-    <h2>Edit dog here!</h2>
-
-    <div>
-        <li>Dog Name:
-            <input type="dogName" ng-model="displayShelterOnly.name" autofocus>
-        </li>
-        <li>Dog Age
-            <input type="dogAge" ng-model="displayShelterOnly.age">
-        </li>
-        <li>Dog Size:
-            <input type="dogSize" ng-model="displayShelterOnly.size">
-        </li>
-        <li>Health Comments:
-            <input type="dogHealth" ng-model="displayShelterOnly.health">
-        </li>
-        <li>Good with other Animals?:
-            <input type="dogAge" ng-model="displayShelterOnly.animals">
-        </li>
-        <li>Good with children?:
-            <input type="dogChildren" ng-model="displayShelterOnly.children">
-        </li>
-        <li>Additional Comments:
-            <input type="dogAdditional" ng-model="displayShelterOnly.additional">
-        </li>
-        <button ng-click="editDogToDatabase()">Edit Dog</button>
-    </div>
-
 </div>

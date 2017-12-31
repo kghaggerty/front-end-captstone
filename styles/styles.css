@@ -324,3 +324,17 @@ input#file {
 .chat-post-button {
     background-color: #e07474;
 }
+
+/* VIEW/EDIT ALL DOGS A SHELTER HAS POSTED */
+.edit-dog-container {
+
+}
+
+.edit-dog-button {
+    background-color: #e07474;
+    margin-bottom: 2px;
+}
+
+.found-home-button {
+    background-color: #e07474;
+}
