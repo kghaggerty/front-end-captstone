@@ -44,28 +44,53 @@
         <h2>Edit dog here!</h2>
 
         <div class="edit-dog-container">
-            <li>Dog Name:
+            <li class="edit-post">Dog Name:
                 <input type="dogName" ng-model="displayShelterOnly.name" autofocus>
             </li>
-            <li>Dog Age
+            <li class="edit-post">Dog Age
                 <input type="dogAge" ng-model="displayShelterOnly.age">
             </li>
-            <li>Dog Size:
+            <li class="edit-post">Dog Size:
                 <input type="dogSize" ng-model="displayShelterOnly.size">
             </li>
-            <li>Health Comments:
+            <li class="edit-post">Health Comments:
                 <input type="dogHealth" ng-model="displayShelterOnly.health">
             </li>
-            <li>Good with other Animals?:
+            <li class="edit-post">Good with other Animals?:
                 <input type="dogAge" ng-model="displayShelterOnly.animals">
             </li>
-            <li>Good with children?:
+            <li class="edit-post">Good with children?:
                 <input type="dogChildren" ng-model="displayShelterOnly.children">
             </li>
-            <li>Additional Comments:
+            <liclass="edit-post">Additional Comments:
                 <input type="dogAdditional" ng-model="displayShelterOnly.additional">
             </li>
-            <button ng-click="editDogToDatabase()">Edit Dog</button>
+            <button class="btn btn-primary user-login-button edit-dog-button" ng-click="editDogToDatabase()">Save Changes</button>
         </div>
     </div>
 </div>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button> -->
+      <!-- Button trigger modal -->
+      <!-- Modal -->
+      <!-- <div class="modal fade edit-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              HEYYY
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div> -->

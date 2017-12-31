@@ -289,7 +289,7 @@ input#file {
     background-color: #e07474;
 }
 
-.shelter-post {
+.shelter-post, .edit-post {
     margin-bottom: 5px;
 }
 
@@ -306,6 +306,7 @@ input#file {
     box-shadow: .2px .2px .5px .2px #000000;
     
 }
+
 
 .chat-bubble {
     position: absolute;
@@ -325,9 +326,22 @@ input#file {
     background-color: #e07474;
 }
 
+.chat-body {
+    height: 100%;
+}
+
 /* VIEW/EDIT ALL DOGS A SHELTER HAS POSTED */
 .edit-dog-container {
-
+    background-color: #d35a5a;
+    border-radius: 2px;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    border: black solid 1px;
+    box-shadow: .2px .2px .5px .2px #000000;
+    margin-bottom: 5%;
+    width: 50%;
 }
 
 .edit-dog-button {
@@ -338,3 +352,4 @@ input#file {
 .found-home-button {
     background-color: #e07474;
 }
+
