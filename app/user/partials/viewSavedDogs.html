@@ -1,15 +1,38 @@
-<div>Saved dogs here</div>
+<div class="dog-home-body" style="opacity: .9">
+    <br>
+    <div class="container">
+        <h2>Your Saved Dogs</h2>
 
-<div ng-repeat="viewDog in savedDogs">
-    <div>
-        <img src="{{ viewDog.url }}" alt="Saved Dog Card" width="150" height="150">
-        <br> Name: {{ viewDog.name }}
-        <br>Age: {{ viewDog.age }}
-        <br>Age: {{ viewDog.size }}
-        <br> Good with animals?: {{ viewDog.animals }}
-        <br>Good with Children?: {{ viewDog.children }}
-        <br>Additional Comments: {{ viewDog.additional }}
-        <br>Want to write an email? <a href="mailto: {{ viewDog.email }}"> {{ viewDog.email }} </a>
-        
+        <br>
+        <div class="row">
+            <div class="card col-sm-3 dog-card" style="width: 10rem;" ng-repeat="viewDog in savedDogs">
+                <div class="card-body">
+                    <img class="dog-picture" src="{{ viewDog.url }}" alt="Dog Picture" width="150" height="150">
+                    <br>
+                    <div class="cart-title">
+                        <h2>{{ viewDog.name }}</h2>
+                        <br>
+                        <p>Download Application and E-mail it!</p>
+                        <a href="mailto: {{ viewDog.email }}"> {{ viewDog.email }} </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary user-login-button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            View Details
+                        </button>
+                        <br>
+                        <div class="dropdown-menu">
+                            <p class="dropdown-item">Age: {{ viewDog.age }}</p>
+                            <p class="dropdown-item">Size: {{ viewDog.size }}</p>
+                            <p class="dropdown-item">Health: {{ viewDog.health }}</p>
+                            <p class="dropdown-item">Good with Children?: {{ viewDog.children }}</p>
+                            <p class="dropdown-item">Good with animals?: {{ viewDog.animals }}</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="dropdown-item">Additional Comments: {{ viewDog.additional }}</p>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>

@@ -1,6 +1,6 @@
 angular
     .module("AuthApp")
-    .controller("chatInputCtrl", function (userFactory, factory, $scope, AuthFactory, $location, chatFactory) {
+    .controller("chatInputCtrl", function (userFactory, factory, $scope, AuthFactory, $location, chatFactory, shelterFactory) {
         $scope.viewChat = function () {
             $location.url('/chat/userChat')
         }
@@ -16,6 +16,11 @@ angular
                 return user.uid === AuthFactory.getUser().uid
             })[0]
             $scope.chatname = theUser
+            if (theUser === undefined || theUser === null)
+            shelterFactory.listShelters().then(response => {
+                console.log(response)
+                $scope.chatname = response.shelterName
+            })[0]
         })
         
         //gathering message and user information to post to firebase

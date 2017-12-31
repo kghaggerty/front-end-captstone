@@ -1,35 +1,36 @@
-<div>
+<img class="post-dog-body" src="../../app/img/RelaxingRed.jpg" alt="banner" width="100%" height="100%" style="object-fit: fill;">
+<div class="post-dog-container container-fluid">
     <br>
-    <h2>We are so glad you decided to join our site! Please use the form below to post your dog to our page! Users will then
+    <h2>Use the form below to post your dog to our page! Users will then
         be able to see the dogs you have posted.</h2>
     <ul>
-        <li>Dog's Name:
+        <li class="shelter-post">Dog's Name:
             <input type="dogName" ng-model="dog.name" autofocus>
         </li>
-        <li>Dog's Age:
+        <li class="shelter-post">Dog's Age:
             <input type="dogAge" ng-model="dog.age">
         </li>
-        <li class="dog-pic-li">Picture of Dog:
+        <li class="dog-pic-li shelter-post">Picture of Dog:
             <input type="file" id="fileinput">
         </li>
-        <button type="button" class="btn btn-primary" id="uploadButton" ng-click="uploadFile()">Upload File</button>
-        <li>Dog Size:
+        <button type="button" class="btn btn-primary user-login-button upload-photo-button" id="uploadButton" ng-click="uploadFile()">Click to Upload Picture</button>
+        <li class="shelter-post">Dog Size:
             <input type="dogSize" ng-model="dog.size">
         </li>
-        <li>Health Comments:
+        <li class="shelter-post">Health Comments:
             <input type="dogHealth" ng-model="dog.health">
         </li>
-        <li>Good with other Animals?:
+        <li class="shelter-post">Good with other Animals?:
             <input type="dogAge" ng-model="dog.animals">
         </li>
-        <li>Good with children?:
+        <li class="shelter-post">Good with children?:
             <input type="dogChildren" ng-model="dog.children">
         </li>
-        <li>Additional Comments:
+        <li class="shelter-post">Additional Comments:
             <input type="dogAdditional" ng-model="dog.additional">
         </li>
-        <button ng-click="postDogToDatabase(dog); postURL()">Post Your Dog Now!</button>
-
+        
     </ul>
-    <button ng-click="viewShelterDogsButton()">View or edit all Dogs you have posted!</button>
-</div>
+    <button class="btn btn-primary user-login-button post-dog-button" ng-click="postDogToDatabase(dog); postURL()">Post Your Dog Now!</button>
+    <button class="btn btn-primary user-login-button view-shelter-dogs-button" ng-click="viewShelterDogsButton()">View or edit all Dogs you have posted!</button>
+    </div>

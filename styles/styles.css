@@ -46,7 +46,6 @@ input#file {
     border-radius: 2px;
     text-decoration: none;
     color: white; 
-
 }
 
 .navbar {
@@ -173,6 +172,7 @@ input#file {
     border-radius: 10px;
     -webkit-filter: blur(1px);
 }
+
 .banner-register-text {
     position: absolute;
     transform: translate(-12%, -50%);
@@ -213,14 +213,12 @@ input#file {
     /* margin-right: 1px; */
     box-shadow: 6px 30px 53px -15px rgba(0,0,0,0.65);
     margin-left: 6px;
-
 }
 
 .dog-picture {
     border: .5px solid rgba(14, 11, 9, 0.466);
     border-radius: 2%;
     object-fit: cover;
-    
 }
 
 .new-body {
@@ -239,6 +237,15 @@ input#file {
     left: 7%;
 }
 
+/* VIEW SAVED DOGS */
+.saved-dog-body {
+    position: absolute; 
+}
+
+.saved-dog-container {
+    position: relative;
+}
+
 /* VIEW ALL SHElTERS PAGE */
 .all-shelter-body {
     position: absolute; 
@@ -254,7 +261,7 @@ input#file {
     background-repeat: repeat-y;
     background-image: url("../../app/img/RelaxingRed.jpg");
     width: 100%;
-    
+    height: 100%;
 }
 
 .dog-home-container {
@@ -263,4 +270,21 @@ input#file {
 
 .card:hover {
     background-color: rgb(253, 246, 216)
+}
+
+/* SHELTER WELCOME PAGE */
+.post-dog-body {
+    position: absolute; 
+}
+
+.post-dog-container {
+    position: relative;
+}
+
+.post-dog-button, .view-shelter-dogs-button, .upload-photo-button {
+    background-color: #e07474;
+}
+
+.shelter-post {
+    margin-bottom: 5px;
 }
