@@ -1,9 +1,20 @@
 angular
     .module("AuthApp")
     .controller("chatInputCtrl", function (userFactory, factory, $scope, AuthFactory, $location, chatFactory, shelterFactory) {
-        $scope.viewChat = function () {
-            $location.url('/chat/userChat')
-        }
+        // $scope.viewChat = function () {
+        //     // $location.url('/chat/userChat')
+        //     userFactory.listUsers().then(data => {
+        //         let theUser = data.filter(function (user) {
+        //             return user.uid === AuthFactory.getUser().uid
+        //         })[0]
+        //         if (theUser === undefined || theUser.firstName === null) {
+        //             console.log("You are a shelter")
+        //             $location.url('/chat/shelterChat')
+        //         } else {
+        //             $location.url('/chat/userChat')
+        //         }
+        //     })
+        // }
 
         chatFactory.listChatMessages().then(result => {
             $scope.chatMessages = result
@@ -16,19 +27,15 @@ angular
                 return user.uid === AuthFactory.getUser().uid
             })[0]
             $scope.chatname = theUser
-            if (theUser === undefined || theUser === null)
-            shelterFactory.listShelters().then(response => {
-                console.log(response)
-                $scope.chatname = response.shelterName
-            })[0]
         })
         
         //gathering message and user information to post to firebase
         $scope.chatPostButton = function (stuff) {
+            
             userFactory.listUsers().then(data => {
                 let theUser = data.filter(function (user) {
                     return user.uid === AuthFactory.getUser().uid
-                })[0]
+                })[0] 
                 return theUser
             }).then(theUser => {
                 const inputPost = {
@@ -48,5 +55,4 @@ angular
                     })
             })
         }
-
     })

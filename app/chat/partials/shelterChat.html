@@ -1,0 +1,12 @@
+<div class="dog-home-body chat-body" style="opacity: .9">
+        <div class="container whole-chat">
+            <br>
+            <h2>Welcome to the Chat.  Shelter accounts may view chat, but not post to it.</h2>
+            <div class="chat-container">
+                <div ng-repeat="displaymessage in chatMessages" class="chat-text">
+                    {{ displaymessage.firstName }} {{ displaymessage.lastName }}: {{ displaymessage.message }}
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>

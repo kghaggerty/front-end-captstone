@@ -1,4 +1,4 @@
-<div class="dog-home-body chat-body" style="opacity: .9">
+<div class="dog-home-body chat-body" style="opacity: .9;">
     <div class="container whole-chat">
         <br>
         <h2>Welcome to the Chat!!</h2>
@@ -6,7 +6,6 @@
             <div ng-repeat="displaymessage in chatMessages" class="chat-text">
                 {{ displaymessage.firstName }} {{ displaymessage.lastName }}: {{ displaymessage.message }}
                 <br>
-                <div>{{ displaymessage.date }} </div>
             </div>
         </div>
             <br>
@@ -15,8 +14,10 @@
                 <input id="text" type="text" ng-model="input.chatInput" placeholder="Type Here">
                 <br/>
                 <button class="btn btn-primary user-login-button chat-post-button" id="postButton" ng-click="chatPostButton(input)">Post</button>
-                <br/>
+                <br>
+                <br>
             </div>
-        
+        <br>
+        <br>
     </div>
 </div>

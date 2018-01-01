@@ -71,5 +71,10 @@ angular.module("AuthApp").config(function ($routeProvider) {
             controller: 'dogsFoundHomeCtrl',
             resolve: { isAuth }
         })
+        .when('/chat/shelterChat', {
+            templateUrl: 'app/chat/partials/shelterChat.html',
+            controller: 'chatInputCtrl',
+            resolve: { isAuth }
+        })
         .otherwise('/auth/welcome')
 })

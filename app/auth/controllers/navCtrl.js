@@ -15,4 +15,18 @@ angular.module("AuthApp").controller("navCtrl",
                 }
             })
         }
+        $scope.viewChat = function () {
+            // $location.url('/chat/userChat')
+            userFactory.listUsers().then(data => {
+                let theUser = data.filter(function (user) {
+                    return user.uid === AuthFactory.getUser().uid
+                })[0]
+                if (theUser === undefined || theUser.firstName === null) {
+                    console.log("You are a shelter")
+                    $location.url('/chat/shelterChat')
+                } else {
+                    $location.url('/chat/userChat')
+                }
+            })
+        }
     })
