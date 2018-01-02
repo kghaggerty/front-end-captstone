@@ -1,16 +1,18 @@
-<nav ng-controller="navCtrl" class="navbar navbar-expand-sm" style="background-color:rgb(253, 246, 216)">
-    <span ng-if="isAuthenticated()">
-    <div class="container-fluid">
+<span ng-controller="navCtrl">
+    <nav ng-if="isAuthenticated()" class="navbar navbar-expand-sm" style="background-color:rgb(253, 246, 216)">
+        <div class="container-fluid">
             <ul class="nav">
                 <!-- Navbar content -->
                 <li class="nav-item">
-                        <a "nav-link" class="navbar-link home-nav" href="#" ng-click="home()">Home<br></a>
+                    <a "nav-link" class="navbar-link home-nav" href="#" ng-click="home()">Home
+                        <br>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="navbar-link" href="#" ng-click="viewChat()">Chat</a>
                 </li>
                 <li class="nav-item">
-                    <a "nav-link" class="navbar-link" href="#!/user/viewAllShelters" ng-click="viewAllShelters()">View All Shelters  </a>
+                    <a "nav-link" class="navbar-link" href="#!/user/viewAllShelters" ng-click="viewAllShelters()">View All Shelters </a>
                 </li>
                 <li class="nav-item">
                     <a "nav-link" class="navbar-link" href="#!/user/dogsFoundHome" ng-click="dogsFoundHome()">Dogs Who Found A Home</a>
@@ -19,10 +21,11 @@
                     <a "nav-link" class="navbar-link" target="_blank" href="https://docs.google.com/document/d/1fes11ap2UuuSt3eiUeGaFV1sL-lNOTe4S4noLml1WPw/edit?usp=sharing">Dog Application</a>
                 </li>
                 <li class="nav-item">
-                    <a "nav-link" class="navbar-link" href="#" ng-click="logout()">Logout<br></a>
+                    <a "nav-link" class="navbar-link" href="#" ng-click="logout()">Logout
+                        <br>
+                    </a>
                 </li>
             </ul>
         </div>
-    </span>
-</nav>
-
+    </nav>
+</span>
