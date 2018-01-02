@@ -182,7 +182,7 @@ input#file {
 
 .banner-register-text {
     position: absolute;
-    transform: translate(-12%, -50%);
+    transform: translate(-20%, -50%);
 }
 
 /* USER REGISTER */
@@ -222,7 +222,7 @@ input#file {
 }
 
 .dog-picture {
-    border: .5px solid rgba(14, 11, 9, 0.466);
+    border: 1px solid rgba(14, 11, 9, 0.733);
     border-radius: 2%;
     object-fit: cover;
 }

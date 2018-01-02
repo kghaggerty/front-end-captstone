@@ -1,8 +1,9 @@
 <img class="post-dog-body" src="../../app/img/RelaxingRed.jpg" alt="banner" width="100%" height="100%" style="object-fit: fill;">
 <div class="post-dog-container container-fluid">
     <br>
-    <h2>Use the form below to post your dog to our page! Users will then
-        be able to see the dogs you have posted.</h2>
+    <h2 ng-model="CurrentUser">Welcome, {{ CurrentUser }}!</h2>
+    <br>
+    <p>Use the form below to post your dog to our page! Users will then be able to see the dogs you have posted.</p>
     <ul>
         <li class="shelter-post">Dog's Name:
             <input type="dogName" ng-model="dog.name" autofocus>
@@ -29,8 +30,8 @@
         <li class="shelter-post">Additional Comments:
             <input type="dogAdditional" ng-model="dog.additional">
         </li>
-        
+
     </ul>
     <button class="btn btn-primary user-login-button post-dog-button" ng-click="postDogToDatabase(dog); postURL()">Post Your Dog Now!</button>
     <button class="btn btn-primary user-login-button view-shelter-dogs-button" ng-click="viewShelterDogsButton()">View or edit all Dogs you have posted!</button>
-    </div>
+</div>

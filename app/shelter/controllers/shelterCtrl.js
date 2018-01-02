@@ -6,6 +6,13 @@ angular
     let currentId = AuthFactory.getUser().uid
 
     $scope.dog = {}
+    shelterFactory.listShelters().then(data => {
+        let theUser = data.filter(function (user) {
+            return user.uid === AuthFactory.getUser().uid
+        })[0]
+        console.log(theUser.shelterName, "THEUSERR")
+        $scope.CurrentUser = theUser.shelterName
+    })
     //Posts dog input to firebase
     $scope.postDogToDatabase = function(woof){
         shelterFactory.postDog(woof).then( res => {
