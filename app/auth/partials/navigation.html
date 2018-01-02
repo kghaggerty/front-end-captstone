@@ -1,6 +1,6 @@
 <nav ng-controller="navCtrl" class="navbar navbar-expand-sm" style="background-color:rgb(253, 246, 216)">
+    <span ng-if="isAuthenticated()">
     <div class="container-fluid">
-        <span ng-if="isAuthenticated()">
             <ul class="nav">
                 <!-- Navbar content -->
                 <li class="nav-item">
@@ -22,7 +22,7 @@
                     <a "nav-link" class="navbar-link" href="#" ng-click="logout()">Logout<br></a>
                 </li>
             </ul>
-        </span>
-    </div>
+        </div>
+    </span>
 </nav>
 

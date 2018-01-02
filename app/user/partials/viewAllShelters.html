@@ -6,11 +6,9 @@
     <div ng-repeat="displayAllShetlers in shelterDisplay">
 
         <div>
-            <a href="mailto:{{ displayAllShetlers.email }}">{{ displayAllShetlers.email }}</a>
             <br> {{ displayAllShetlers.shelterName }}
             <br> {{ displayAllShetlers.address }}
-            <br>
+            <br> <a href="mailto:{{ displayAllShetlers.email }}">{{ displayAllShetlers.email }}</a>
         </div>
-
     </div>
 </div>

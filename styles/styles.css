@@ -71,7 +71,7 @@ input#file {
 .banner-home {
     position: relative;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 
@@ -81,12 +81,15 @@ input#file {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -600%);
-    text-shadow: 3px 1px 8px rgba(27, 27, 27, 0.925);
+    text-shadow: 3px 1px 8px rgba(143, 141, 141, 0.493);
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
      -ms-animation: fadein 2s; /* Internet Explorer */
       -o-animation: fadein 2s; /* Opera < 12.1 */
          animation: fadein 2s;
+         background: #e07474;
+         border-radius: 10px;
+         color: white;
 }
 
 @keyframes fadein {
@@ -118,6 +121,10 @@ input#file {
      -ms-animation: fadein 2s; /* Internet Explorer */
       -o-animation: fadein 2s; /* Opera < 12.1 */
          animation: fadein 2s;
+}
+
+.home-button {
+    background-color: #e07474;
 }
 
 /* USER LOG IN PAGE */ /* SHELTER LOGIN PAGE */
@@ -210,7 +217,6 @@ input#file {
     margin-bottom: 2px;
     position: relative;
     align-content: center;
-    /* margin-right: 1px; */
     box-shadow: 6px 30px 53px -15px rgba(0,0,0,0.65);
     margin-left: 6px;
 }
@@ -249,6 +255,7 @@ input#file {
 /* VIEW ALL SHElTERS PAGE */
 .all-shelter-body {
     position: absolute; 
+    padding-bottom: 2%;
 }
 
 .all-shelter-container {
