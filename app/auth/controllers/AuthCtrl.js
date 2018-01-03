@@ -77,9 +77,11 @@ angular.module("AuthApp")
     }
     //Button to bring user to their log in section
     $scope.clickLogInUser = function () {
+        window.scrollTo(0, 0);
         $location.url('/auth')
     }
     $scope.clickLogInShelter = function () {
+        window.scrollTo(0, 0);
         $location.url('/auth/authShelter')
     }
     //Create new account button, which will take them to page to ask if they are a user or a shelter

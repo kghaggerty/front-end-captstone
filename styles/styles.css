@@ -262,6 +262,12 @@ input#file {
     position: relative;
 }
 
+.google-map {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
 /* VIEW ALL DOGS WHO HAVE FOUND A HOME PAGE */
 .dog-home-body {
     position: absolute; 
